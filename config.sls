@@ -44,7 +44,7 @@ pkg-{{name}}:
 {% set default_az = openstack.get('default_availability_zone', 'nova') %}
 
 # Ugly network IP extraction (automatic based on subnet from config).
-{% set _pre_cmd = "python -c 'from salt.modules.network import interfaces, _calculate_subnet; addresses=[]; map(addresses.extend, [itr.get(\"inet\") for itr in interfaces().values() if itr.get(\"inet\")]); subnets=\"" %}
+{% set _pre_cmd = "python -c 'from salt.modules.network import interfaces; from salt.utils.network import _calculate_subnet; addresses=[]; map(addresses.extend, [itr.get(\"inet\") for itr in interfaces().values() if itr.get(\"inet\")]); subnets=\"" %}
 {% set _post_cmd = "\".split(\",\"); matches=[addr.get(\"address\") for addr in addresses if _calculate_subnet(addr.get(\"address\"), addr.get(\"netmask\")) in subnets]; matches.append(\"0.0.0.0\"); print matches[0];'" %}
 {% set internal_ip = salt['cmd.run'](_pre_cmd + internal_network + _post_cmd) %}
 {% set public_ip = salt['cmd.run'](_pre_cmd + public_network + _post_cmd) %}
