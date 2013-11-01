@@ -62,3 +62,4 @@ make-volumes:
         - unless: rados lspools | grep volumes
         - require:
             - file: /etc/ceph/ceph.conf
+            - pkg: ceph-common
