@@ -33,6 +33,15 @@ pkg-{{name}}:
         - pkg: ubuntu-cloud-keyring
 {% endmacro %}
 
+# Eventlet.
+# Because of bugs in all OpenStack services, we make
+# sure that eventlet is up-to-date and restart all
+# services when it changes.
+eventlet-uptodate:
+    pkg:
+        - latest
+        - name: python-eventlet
+
 # Network configuration.
 {% set interfaces = openstack.get('interfaces', {}) %}
 {% set networks = openstack.get('networks', {}) %}

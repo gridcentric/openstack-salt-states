@@ -25,6 +25,7 @@ include:
         - enable: True
         - watch:
             - pkg: quantum-dhcp-agent
+            - pkg: python-eventlet
             - file: /etc/quantum/quantum.conf
             - file: /etc/quantum/dhcp_agent.ini
     require:

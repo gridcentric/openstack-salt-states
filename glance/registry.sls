@@ -57,6 +57,7 @@ include:
         - enable: True
         - watch:
             - pkg: glance-registry
+            - pkg: python-eventlet
             - file: /etc/glance/policy.json
             - file: /etc/glance/glance-registry-paste.ini
             - file: /etc/glance/glance-registry.conf

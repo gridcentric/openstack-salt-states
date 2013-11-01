@@ -8,6 +8,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-api
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
             - file: /etc/nova/api-paste.ini
@@ -30,6 +31,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-objectstore
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
     require:
@@ -43,6 +45,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-novncproxy
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
     require:
@@ -56,6 +59,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-consoleauth
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
     require:
@@ -69,6 +73,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-cert
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
     require:

@@ -64,6 +64,7 @@ include:
         - enable: True
         - watch:
             - pkg: glance-api
+            - pkg: python-eventlet
             - file: /etc/glance/policy.json
             - file: /etc/glance/glance-api-paste.ini
             - file: /etc/glance/glance-api.conf

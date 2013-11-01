@@ -8,6 +8,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-compute
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
     require:
@@ -75,6 +76,7 @@ make-mem-url:
             - file: /etc/sysconfig/vms
         - watch:
             - pkg: cobalt-compute
+            - pkg: python-eventlet
             - cmd: stop-apparmor
             - cmd: stop-cgroups
             - file: /etc/sysconfig/vms

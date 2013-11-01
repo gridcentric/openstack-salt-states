@@ -32,6 +32,7 @@ include:
         - enable: True
         - watch:
             - pkg: cinder-api
+            - pkg: python-eventlet
             - file: /etc/cinder/cinder.conf
             - file: /etc/cinder/policy.json
             - file: /etc/cinder/api-paste.ini

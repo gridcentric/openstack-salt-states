@@ -13,6 +13,7 @@ include:
         - enable: True
         - watch:
             - pkg: keystone
+            - pkg: python-eventlet
             - file: /etc/keystone/keystone.conf
             - file: /etc/keystone/policy.json
             - file: /etc/keystone/init.sh

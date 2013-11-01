@@ -8,6 +8,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-scheduler
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
     require:

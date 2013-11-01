@@ -8,6 +8,7 @@ include:
         - enable: True
         - watch:
             - pkg: cinder-scheduler
+            - pkg: python-eventlet
             - file: /etc/cinder/cinder.conf
             - file: /etc/cinder/policy.json
     require:

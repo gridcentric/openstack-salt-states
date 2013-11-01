@@ -11,6 +11,7 @@ include:
         - enable: True
         - watch:
             - pkg: cinder-volume
+            - pkg: python-eventlet
             - file: /etc/cinder/cinder.conf
             - file: /etc/cinder/policy.json
             - file: /etc/cinder/secret.xml

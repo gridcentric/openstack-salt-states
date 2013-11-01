@@ -22,6 +22,7 @@ include:
         - enable: True
         - watch:
             - pkg: nova-conductor
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
             - file: /etc/nova/policy.json
             - file: /etc/init/nova-conductor.conf

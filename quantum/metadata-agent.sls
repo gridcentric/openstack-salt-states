@@ -28,6 +28,7 @@ include:
         - enable: True
         - watch:
             - pkg: quantum-metadata-agent
+            - pkg: python-eventlet
             - file: /etc/quantum/quantum.conf
             - file: /etc/quantum/metadata_agent.ini
     require:

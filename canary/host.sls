@@ -8,6 +8,7 @@ include:
         - enable: True
         - watch:
             - pkg: canary-host
+            - pkg: python-eventlet
             - file: /etc/nova/nova.conf
     require:
         - service: canary
